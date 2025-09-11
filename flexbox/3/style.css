@@ -1,0 +1,25 @@
+div{
+    display: flex;
+    width: 100%;
+    height: 300px;
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
+}
+
+#green{
+    background-color: green;
+    width: 25%;
+    flex-shrink: 2;
+}
+
+#yellow{
+    background-color: yellow;
+    flex-grow: 2;
+    width: 50%;
+}
+
+#purple{
+    background-color: purple;
+    width: 25%;
+    flex-shrink: 2;
+}
