@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bejelentkezés</title>
+    <style>
+        #paragraph{
+            font-size: 100px;
+        }
+        #login{
+            border: 2px solid black;
+            border-radius: 5px;
+            text-align: center;
+            padding: 20px;
+            margin: 20px auto;   
+            width: 25%;
+        }
+    </style>
+</head>
+<body>
+    <div id="login">
+        <h1>Jelentkezzen be</h1>
+        <input id="email" type="text" placeholder="email">
+        <br>
+        <br>
+        <input id="password" type="password" placeholder="jelszó">
+        <br>
+        <br>
+        <input id="password2" type="password" placeholder="jelszó2">
+        <br>
+        <br>
+        <button onclick="Login()">Bejelentkezés</button>
+    </div>
+    <div>
+        <P id="paragraph"></P>
+    </div>
+
+    <script>
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        const inputEmail = document.getElementById("email");
+        const innputPassword = document.getElementById("password");
+        const innputPassword2 = document.getElementById("password2");
+        const paragraph = document.getElementById("paragraph");
+
+        function Login(){
+            if(!emailRegex.test(inputEmail.value))
+            {
+                alert("Rossz az email.")
+                return
+            }
+
+            if(innputPassword.value === innputPassword2.value ){
+                ShowDiv()
+            }else{
+                alert("A 2 jelszó nem egyezik.")
+                return
+            }
+        }
+        
+
+        function ShowDiv(){
+            paragraph.innerHTML = `sikeres regisztráció`;
+        }
+    </script>
+</body>
+</html>
