@@ -44,6 +44,12 @@
         const paragraph = document.getElementById("paragraph");
 
         function Login(){
+
+            if(!inputEmail.value || !innputPassword.value || !innputPassword2.value){
+                alert("Mindenhova adjon meg valamit.")
+                return
+            }
+
             if(!emailRegex.test(inputEmail.value))
             {
                 alert("Rossz az email.")
