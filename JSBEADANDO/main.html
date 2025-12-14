@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termékek nyilvántartása</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="function.js"></script>
+</head>
+<body>
+ <div class="container">
+    <h1>Termékek nyilvántartása</h1>
+
+    <label>Név (azonosító)</label>
+    <input type="text" id="name">
+
+    <label>Ár (Ft)</label>
+    <input type="number" id="price">
+
+    <label>Mennyiség</label>
+    <input type="number" id="quantity">
+
+    <button onclick="addOrUpdateProduct()">Mentés</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Név</th>
+                <th>Ár</th>
+                <th>Mennyiség</th>
+                <th>Műveletek</th>
+            </tr>
+        </thead>
+        <tbody id="productTable"></tbody>
+    </table>
+</div>
+</body>
+</html>
