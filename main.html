@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #users {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .user-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            width: 220px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Felhasználók</h1>
+<div id="users"></div>
+
+<script>
+    fetch('https://surveys-5jvt.onrender.com/api/users')
+        .then(response => {
+            if (!response.ok) throw new Error('Hálózati hiba');
+            return response.json();
+        })
+        .then(users => {
+            console.log("API válasz:", users);
+
+            const usersDiv = document.getElementById('users');
+
+            users.forEach(user => {
+                console.log("ID:", user.id);
+                console.log("Név:", user.firstName, user.lastName);
+                console.log("Email:", user.email);
+
+                const div = document.createElement('div');
+                div.className = 'user-card';
+                div.innerHTML = `
+                    <h3>${user.firstName} ${user.lastName}</h3>
+                    <p><b>ID:</b> ${user.id}</p>
+                    <p><b>Email:</b> ${user.email}</p>
+                `;
+                usersDiv.appendChild(div);
+            });
+        })
+        .catch(error => {
+            console.error("Hiba történt a fetch során:", error);
+        });
+</script>
+
+</body>
+</html>
