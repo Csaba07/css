@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autók kezelése</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Autók kezelése</h1>
+
+<form id="carForm">
+    <input type="text" id="model" placeholder="Model" required>
+    <input type="text" id="brand" placeholder="Brand" required>
+    <input type="number" id="year" placeholder="Year" required>
+    <button type="submit">Új autó hozzáadása</button>
+</form>
+
+<div id="error"></div>
+
+<div class="cars" id="cars"></div>
+
+<div id="details"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
